@@ -11,3 +11,16 @@ services:
           - './data/postgres:/var/lib/postgresql/data:delegated'
         ports:
           - 5432:5432
+
+    backend:
+      image: yiisoftware/yii2-php:7.1-apache
+      volumes:
+        - ./backend/composer/cache:/root/.composer/cache:delegated
+        - ./backend/basic:/app:delegated
+      environment:
+        DATABASE_NAME: ${DATABASE_NAME}
+        DATABASE_USER: ${DATABASE_USER}
+        DATABASE_PASS: ${DATABASE_PASS}
+        DATABASE_HOST: db
+      ports:  
+          - 8000:80
