@@ -26,3 +26,13 @@ services:
         PRODUCTION: ${AMBIENTE_DESARROLLO}
       ports:  
           - 8000:80
+          
+    frontend:
+      build:
+        context: .
+        target: develop-stage
+      volumes:
+        - './frontend:/app'
+      ports:
+        - 8080:8080
+      command: /bin/sh -c "npm run serve"
