@@ -22,5 +22,6 @@ services:
         DATABASE_USER: ${DATABASE_USER}
         DATABASE_PASS: ${DATABASE_PASS}
         DATABASE_HOST: db
+        PRODUCTION: ${AMBIENTE_DESARROLLO}
       ports:  
           - 8000:80
