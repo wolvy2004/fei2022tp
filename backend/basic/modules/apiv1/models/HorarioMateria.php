@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\modules\apiv1\models;
 
 use Yii;
 
@@ -16,71 +16,7 @@ use Yii;
  * @property Materia $materia
  * @property Reserva $reserva
  */
-class HorarioMateria extends \yii\db\ActiveRecord
+class HorarioMateria extends \app\models\Materia
 {
-    /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'horario_materia';
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
-    {
-        return [
-            [['id_materia', 'id_reserva'], 'required'],
-            [['id_materia', 'id_reserva'], 'default', 'value' => null],
-            [['id_materia', 'id_reserva'], 'integer'],
-            [['fh_desde', 'fh_hasta'], 'safe'],
-            [['id_materia'], 'exist', 'skipOnError' => true, 'targetClass' => Materia::className(), 'targetAttribute' => ['id_materia' => 'id']],
-            [['id_reserva'], 'exist', 'skipOnError' => true, 'targetClass' => Reserva::className(), 'targetAttribute' => ['id_reserva' => 'id']],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'id_materia' => 'Id Materia',
-            'id_reserva' => 'Id Reserva',
-            'fh_desde' => 'Fh Desde',
-            'fh_hasta' => 'Fh Hasta',
-        ];
-    }
-
-    /**
-     * Gets query for [[Materia]].
-     *
-     * @return \yii\db\ActiveQuery|MateriaQuery
-     */
-    public function getMateria()
-    {
-        return $this->hasOne(Materia::className(), ['id' => 'id_materia']);
-    }
-
-    /**
-     * Gets query for [[Reserva]].
-     *
-     * @return \yii\db\ActiveQuery|ReservaQuery
-     */
-    public function getReserva()
-    {
-        return $this->hasOne(Reserva::className(), ['id' => 'id_reserva']);
-    }
-
-    /**
-     * {@inheritdoc}
-     * @return HorarioMateriaQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new HorarioMateriaQuery(get_called_class());
-    }
+   
 }

@@ -1,34 +1,13 @@
 <?php
 
-namespace app\models;
+namespace app\modules\apiv1\models;
 
 /**
  * This is the ActiveQuery class for [[Aula]].
  *
  * @see Aula
  */
-class AulaQuery extends \yii\db\ActiveQuery
+class AulaQuery extends \app\models\AulaQuery
 {
-    /*public function active()
-    {
-        return $this->andWhere('[[status]]=1');
-    }*/
-
-    /**
-     * {@inheritdoc}
-     * @return Aula[]|array
-     */
-    public function all($db = null)
-    {
-        return parent::all($db);
-    }
-
-    /**
-     * {@inheritdoc}
-     * @return Aula|array|null
-     */
-    public function one($db = null)
-    {
-        return parent::one($db);
-    }
+    
 }

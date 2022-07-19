@@ -7,28 +7,7 @@ namespace app\models;
  *
  * @see HorarioMateria
  */
-class HorarioMateriaQuery extends \yii\db\ActiveQuery
+class HorarioMateriaQuery extends \app\models\MateriaQuery
 {
-    /*public function active()
-    {
-        return $this->andWhere('[[status]]=1');
-    }*/
-
-    /**
-     * {@inheritdoc}
-     * @return HorarioMateria[]|array
-     */
-    public function all($db = null)
-    {
-        return parent::all($db);
-    }
-
-    /**
-     * {@inheritdoc}
-     * @return HorarioMateria|array|null
-     */
-    public function one($db = null)
-    {
-        return parent::one($db);
-    }
+    
 }
