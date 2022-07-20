@@ -3,7 +3,7 @@
     <v-app-bar color="blue" elevation="4" app permanent>
       <v-app-bar-nav-icon
         color="white"
-        @click="$emit('toogle-menu')"
+        @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
       <v-app-bar-title class="white--text"
         >Sistema de Reservas Aulas</v-app-bar-title

@@ -2,6 +2,11 @@
   <v-app>
     <main-menu></main-menu>
     <main-bar></main-bar>
+    <v-main>
+      <v-container fluid>
+         <router-view/>
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
@@ -14,7 +19,7 @@ export default {
 
   components: {
     MainMenu,
-    MainBar
+    MainBar,
   },
 
   data: () => ({
